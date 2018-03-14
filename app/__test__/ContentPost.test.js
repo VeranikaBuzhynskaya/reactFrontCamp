@@ -7,14 +7,13 @@ import Post from '../client/components/Post/Post';
 
 
 import data from './mockDataOfPosts';
-import store from '../client/store';
+import storeConstructor from '../client/store';
 
+const store = storeConstructor({});
 
 describe('Content', () => {
     debugger;
     let content;
-    let match;
-
     beforeAll(() => {
         debugger;
         store.dispatch({
@@ -22,13 +21,26 @@ describe('Content', () => {
             posts: data
         });
         debugger;
+        // content = mount(
+        //     <BrowserRouter>
+        //     <Provider>
+                
+        //     </Provider>
+        // </BrowserRouter>
+        // );
         content = mount(
             <BrowserRouter>
-                <Provider store={store}>
-                    <ContentPost/>
-                </Provider>
-            </BrowserRouter>
+            <div>
+                
+            </div>
+        </BrowserRouter>
         );
+        
+    //     <BrowserRouter>
+    //     <Provider store={store}>
+    //         <ContentPost/>
+    //     </Provider>
+    // </BrowserRouter>
         console.log('content', content);
     });
     debugger;

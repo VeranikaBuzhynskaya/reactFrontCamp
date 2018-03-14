@@ -23,7 +23,7 @@ describe('actions', () => {
         global.fetch = jest.fn().mockImplementation(() => {
             return new Promise((resolve) => {
                 resolve({
-                    json: () =>  mockDataOfPosts
+                    json: () =>  new Promise((res, rej) => {res(mockDataOfPosts);})
                 });
             });
         });

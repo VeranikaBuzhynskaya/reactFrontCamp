@@ -6,7 +6,9 @@ import Post from '../client/components/Post/Post';
 import renderer from 'react-test-renderer';
 
 import data from './mockOnePostData';
-import store from '../client/store';
+import storeConstructor from '../client/store';
+
+const store = storeConstructor({});
 
 describe('Post', () => {
   let blogPost;
